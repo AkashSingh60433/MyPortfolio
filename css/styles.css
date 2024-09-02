@@ -19,6 +19,33 @@ header {
 }
 header img {
     height: 50px;
+    header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 20px;
+        background-color: #C4273B;
+    }
+    
+    header .logo {
+        height: 50px;
+        margin-right: 20px; /* Add spacing between logo and nav */
+    }
+    
+    header nav {
+        display: flex;
+    }
+    
+    header nav a {
+        color: white;
+        margin: 0 15px;
+        text-decoration: none;
+        font-weight: bold;
+    }
+    
+    header nav a:hover {
+        color: #C4273B;
+    }
 }
 nav {
     background-color: #291828;
@@ -164,4 +191,43 @@ footer a:visited {
 .content a:active {
     color: #8A1A1A; /* Color for active links */
     opacity: 0.8; /* Decreased opacity when clicked */
+}
+/* Work Grid Layout */
+.work-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
+
+.work-grid-item {
+    background-color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    padding: 20px;
+    text-align: center;
+}
+
+.work-grid-item img {
+    max-width: 100%;
+    border-radius: 8px;
+}
+/* Global Box-Sizing */
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+/* Header Styling */
+header {
+    background-color: #C4273B;
+    color: white;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+header .logo {
+    height: 50px;
+    margin-right: 20px; /* Add spacing between logo and nav */
 }
