@@ -1,0 +1,235 @@
+// Color Variables
+$primary-color: #C4273B;
+$primary-light-color: #E34A4A;
+$primary-dark-color: #B22222;
+$text-light-color: #ffffff;
+$text-dark-color: #333;
+
+// Global Styles
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html, body {
+    height: 100%;
+}
+
+body {
+    font-family: 'Oswald', Arial, sans-serif;
+    background-color: #f5f5f5;
+    color: $text-dark-color;
+    display: flex;
+    flex-direction: column;
+}
+
+// Header Styling
+header {
+    background-color: $primary-color;
+    color: $text-light-color;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    .logo {
+        height: 50px;
+        margin-right: 20px;
+    }
+
+    nav {
+        display: flex;
+
+        a {
+            color: $text-light-color;
+            margin: 0 15px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 16px;
+            transition: color 0.3s ease;
+
+            &:hover {
+                color: $primary-light-color;
+                text-decoration: underline;
+            }
+
+            &:active {
+                color: $primary-dark-color;
+                opacity: 0.8;
+            }
+
+            &:visited {
+                color: $primary-dark-color;
+            }
+        }
+    }
+}
+
+// Footer Styling
+footer {
+    background-color: $primary-color;
+    color: $text-light-color;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease, color 0.3s ease;
+    margin-top: auto; // Pushes footer to the bottom
+
+    &:hover {
+        background-color: $primary-dark-color;
+    }
+
+    .footer-content {
+        max-width: 1200px;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+    }
+
+    p {
+        margin: 0;
+        font-size: 16px;
+    }
+
+    .social-icons {
+        display: flex;
+        gap: 15px;
+
+        a {
+            display: inline-block;
+        }
+
+        .social-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            transition: transform 0.3s ease;
+
+            &:hover {
+                transform: scale(1.1);
+            }
+        }
+    }
+}
+
+// Content Styles
+.content {
+    padding: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+    background-color: $text-light-color;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+
+    img {
+        float: left;
+        margin-right: 20px;
+        border-radius: 8px;
+    }
+
+    h1 {
+        font-size: 36px;
+        color: $text-light-color;
+    }
+
+    h2 {
+        font-size: 28px;
+        margin-top: 10px;
+    }
+
+    h3 {
+        font-size: 22px;
+        color: #666;
+        margin-top: 5px;
+    }
+}
+
+// Work Grid Layout
+.work-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+    padding: 20px;
+
+    .work-grid-item {
+        background-color: $text-light-color;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        border-radius: 8px;
+        padding: 20px;
+        text-align: center;
+
+        img {
+            max-width: 100%;
+            border-radius: 8px;
+        }
+    }
+}
+
+// Responsive Design
+@media screen and (max-width: 768px) {
+    .content {
+        padding: 20px;
+    }
+
+    .about-bar h1 {
+        font-size: 24px;
+    }
+
+    .skills-table th,
+    .skills-table td {
+        font-size: 14px;
+    }
+
+    .social-icons {
+        gap: 10px;
+
+        .social-icon {
+            width: 30px;
+            height: 30px;
+        }
+    }
+
+    .grid-layout {
+        grid-template-columns: 1fr;
+    }
+
+    header,
+    .content img,
+    .about-bar h1 {
+        text-align: center;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .grid-layout {
+        grid-template-columns: 1fr;
+    }
+
+    h1 {
+        font-size: 28px;
+    }
+}
+
+// Illustration Animation
+.illustration {
+    width: 100px;
+    height: 100px;
+    animation: rotate 4s infinite linear;
+
+    @keyframes rotate {
+        from {
+            transform: rotate(0deg);
+        }
+        to {
+            transform: rotate(360deg);
+        }
+    }
+}
