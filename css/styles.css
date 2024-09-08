@@ -1,14 +1,19 @@
 @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@400&display=swap');
 
 /* Global Styles */
-body {
-    font-family: 'Oswald', Arial, sans-serif;
+* {
+    box-sizing: border-box;
     margin: 0;
     padding: 0;
+}
+
+body {
+    font-family: 'Oswald', Arial, sans-serif;
     background-color: #f5f5f5;
     color: #333;
-    line-height: 1.6;
 }
+
+/* Header Styling */
 header {
     background-color: #C4273B;
     color: white;
@@ -17,51 +22,86 @@ header {
     align-items: center;
     justify-content: space-between;
 }
-header img {
+
+header .logo {
     height: 50px;
-    header {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        padding: 20px;
-        background-color: #C4273B;
-    }
-    
-    header .logo {
-        height: 50px;
-        margin-right: 20px; /* Add spacing between logo and nav */
-    }
-    
-    header nav {
-        display: flex;
-    }
-    
-    header nav a {
-        color: white;
-        margin: 0 15px;
-        text-decoration: none;
-        font-weight: bold;
-    }
-    
-    header nav a:hover {
-        color: #C4273B;
-    }
+    margin-right: 20px; /* Spacing between logo and nav */
 }
+
+header nav {
+    display: flex;
+    align-items: center;
+}
+
+/* Navigation Bar Styles */
 nav {
-    background-color: #291828;
     padding: 15px 0;
     text-align: center;
+    background: none; /* Removed background color */
 }
+
 nav a {
     color: white;
-    margin: 0 20px;
+    margin: 0 15px;
     text-decoration: none;
     font-weight: bold;
     font-size: 16px;
+    transition: font-weight 0.3s ease, color 0.3s ease;
 }
+
 nav a:hover {
-    color: #C4273B;
+    font-weight: bolder; /* Change to bold on hover */
+    color: white; /* Keep text white on hover */
 }
+
+nav a:active {
+    opacity: 0.8;
+}
+
+nav a:visited {
+    color: white; /* Keep text white for visited links */
+}
+
+/* Responsive Nav Bar */
+@media screen and (max-width: 768px) {
+    header {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 10px;
+    }
+
+    header nav {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+    }
+
+    nav a {
+        margin: 10px 0;
+        font-size: 14px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    header {
+        align-items: center;
+    }
+
+    nav {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    nav a {
+        margin: 10px 0;
+        font-size: 14px;
+        display: block;
+    }
+}
+
+/* Content Styles */
 .content {
     padding: 40px;
     max-width: 1200px;
@@ -69,24 +109,19 @@ nav a:hover {
     background-color: white;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
+
 .content img {
     float: left;
     margin-right: 20px;
     border-radius: 8px;
 }
+
 .content h1 {
     font-size: 36px;
     color: #ffffff;
 }
-.content h2 {
-    font-size: 28px;
-    margin-top: 10px;
-}
-.content h3 {
-    font-size: 22px;
-    color: #666;
-    margin-top: 5px;
-}
+
+/* Footer Styles */
 footer {
     background-color: #C4273B;
     color: white;
@@ -96,6 +131,7 @@ footer {
     bottom: 0;
     width: 100%;
 }
+
 footer p {
     margin: 0;
     font-size: 16px;
@@ -120,20 +156,41 @@ footer .social-icons img.social-icon {
 footer .social-icons img.social-icon:hover {
     transform: scale(1.1);
 }
+
+/* About Page Advanced Styling */
 .about-bar {
     background-color: #C4273B;
-    color: rgb(40, 71, 36);
-    padding: 10px 20px;
+    color: #fff;
+    padding: 20px;
     border-radius: 8px;
     margin-bottom: 20px;
-    text-align: left;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: background-color 0.3s ease;
 }
 
-.about-bar h1 {
-    margin: 0;
-    font-size: 32px;
+.about-bar:hover {
+    background-color: #B22222;
 }
+
+.profile-img {
+    border-radius: 50%;
+    transition: transform 0.3s ease;
+}
+
+.profile-img:hover {
+    transform: scale(1.1);
+}
+
+.skills-table th, .skills-table td {
+    padding: 10px;
+    transition: background-color 0.3s ease;
+}
+
+.skills-table th:hover, .skills-table td:hover {
+    background-color: #f5f5f5;
+}
+
+/* Button Styles */
 .btn {
     background-color: #C4273B;
     color: white;
@@ -149,49 +206,27 @@ footer .social-icons img.social-icon:hover {
     opacity: 0.8;
     transform: scale(1.05);
 }
-/* Link Styles */
-nav a,
-footer a {
-    color: white; /* Default link color in the nav and footer */
+
+/* Additional Link Styles */
+a {
+    color: white; /* All links will be white */
     text-decoration: none;
-    font-weight: bold;
+    transition: color 0.3s ease;
 }
 
-nav a:hover,
-footer a:hover {
-    color: #2792c4; /* Hover color */
-    text-decoration: underline; /* Underline on hover */
+a:hover {
+    font-weight: bolder; /* Change to bold on hover */
+    color: white; /* Keep text white on hover */
 }
 
-nav a:active,
-footer a:active {
-    color: #C4273B; /* Active color */
-    opacity: 0.8; /* Decreased opacity when clicked */
+a:active {
+    color: #B22222;
 }
 
-nav a:visited,
-footer a:visited {
-    color: #C4273B; /* Visited link color */
+a:visited {
+    color: white; /* Keep text white for visited links */
 }
 
-/* Additional styling for links in content area */
-.content a {
-    color: #C4273B; /* Default color in content area */
-    text-decoration: none;
-}
-
-.content a:hover {
-    text-decoration: underline; /* Underline on hover */
-}
-
-.content a:visited {
-    color: #8A1A1A; /* Different color for visited links */
-}
-
-.content a:active {
-    color: #8A1A1A; /* Color for active links */
-    opacity: 0.8; /* Decreased opacity when clicked */
-}
 /* Work Grid Layout */
 .work-grid {
     display: grid;
@@ -212,22 +247,72 @@ footer a:visited {
     max-width: 100%;
     border-radius: 8px;
 }
-/* Global Box-Sizing */
-*, *::before, *::after {
-    box-sizing: border-box;
+
+/* Responsive Design for Smaller Screens */
+@media screen and (max-width: 768px) {
+    .content {
+        padding: 20px;
+    }
+
+    .about-bar h1 {
+        font-size: 24px;
+    }
+
+    .skills-table th, .skills-table td {
+        font-size: 14px;
+    }
+
+    .social-icons img.social-icon {
+        width: 30px;
+        height: 30px;
+    }
+
+    .grid-layout {
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+
+    header, .content img, .about-bar h1 {
+        text-align: center;
+    }
 }
 
-/* Header Styling */
-header {
-    background-color: #C4273B;
-    color: white;
-    padding: 20px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+/* Adjusting Grid Layout for Smaller Screens */
+@media screen and (max-width: 768px) {
+    .grid-layout {
+        grid-template-columns: repeat(2, 1fr);
+    }
 }
 
-header .logo {
-    height: 50px;
-    margin-right: 20px; /* Add spacing between logo and nav */
+@media screen and (max-width: 480px) {
+    .grid-layout {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Adjusting the Heading 1 for Smaller Screens */
+h1 {
+    font-size: 36px;
+}
+
+@media screen and (max-width: 768px) {
+    h1 {
+        font-size: 28px;
+    }
+}
+
+/* Illustration Animation */
+.illustration {
+    width: 100px;
+    height: 100px;
+    animation: rotate 4s infinite linear;
+}
+
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
 }
