@@ -1,0 +1,250 @@
+@import url("https://fonts.googleapis.com/css2?family=Oswald:wght@400&display=swap");
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Oswald", Arial, sans-serif;
+  background-color: #f5f5f5;
+  color: #333;
+}
+
+header {
+  background-color: #C4273B;
+  color: #ffffff;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+header .logo {
+  height: 50px;
+  margin-right: 20px;
+}
+header nav {
+  display: flex;
+  align-items: center;
+}
+
+nav {
+  padding: 15px 0;
+  text-align: center;
+  background: none;
+}
+nav a {
+  color: #ffffff;
+  margin: 0 15px;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 16px;
+  transition: font-weight 0.3s ease, color 0.3s ease;
+}
+nav a:hover {
+  font-weight: bolder;
+  color: #ffffff;
+}
+nav a:active {
+  opacity: 0.8;
+}
+nav a:visited {
+  color: #ffffff;
+}
+
+@media screen and (max-width: 768px) {
+  header {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 10px;
+  }
+  header nav {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+  header nav a {
+    margin: 10px 0;
+    font-size: 14px;
+  }
+}
+@media screen and (max-width: 480px) {
+  header {
+    align-items: center;
+  }
+  header nav {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  header nav a {
+    margin: 10px 0;
+    font-size: 14px;
+    display: block;
+  }
+}
+.content {
+  padding: 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+  background-color: #ffffff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+.content img {
+  float: left;
+  margin-right: 20px;
+  border-radius: 8px;
+}
+.content h1 {
+  font-size: 36px;
+  color: #ffffff;
+}
+
+footer {
+  background-color: #C4273B;
+  color: #ffffff;
+  text-align: center;
+  padding: 20px 0;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+footer p {
+  margin: 0;
+  font-size: 16px;
+}
+footer .social-icons {
+  margin-top: 10px;
+}
+footer .social-icons a {
+  margin: 0 10px;
+  display: inline-block;
+}
+footer .social-icons img.social-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  transition: transform 0.3s;
+}
+footer .social-icons img.social-icon:hover {
+  transform: scale(1.1);
+}
+
+.about-bar {
+  background-color: #C4273B;
+  color: #ffffff;
+  padding: 20px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  text-align: center;
+  transition: background-color 0.3s ease;
+}
+.about-bar:hover {
+  background-color: #B22222;
+}
+.about-bar .profile-img {
+  border-radius: 50%;
+  transition: transform 0.3s ease;
+}
+.about-bar .profile-img:hover {
+  transform: scale(1.1);
+}
+
+.skills-table th, .skills-table td {
+  padding: 10px;
+  transition: background-color 0.3s ease;
+}
+.skills-table th:hover, .skills-table td:hover {
+  background-color: #f5f5f5;
+}
+
+.btn {
+  background-color: #C4273B;
+  color: #ffffff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+.btn:hover {
+  opacity: 0.8;
+  transform: scale(1.05);
+}
+
+.work-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 20px;
+  padding: 20px;
+}
+.work-grid .work-grid-item {
+  background-color: #ffffff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  padding: 20px;
+  text-align: center;
+}
+.work-grid .work-grid-item img {
+  max-width: 100%;
+  border-radius: 8px;
+}
+
+@media screen and (max-width: 768px) {
+  .content {
+    padding: 20px;
+  }
+  .about-bar h1 {
+    font-size: 24px;
+  }
+  .skills-table th, .skills-table td {
+    font-size: 14px;
+  }
+  .social-icons img.social-icon {
+    width: 30px;
+    height: 30px;
+  }
+  .grid-layout {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+  header, .content img, .about-bar h1 {
+    text-align: center;
+  }
+}
+@media screen and (max-width: 768px) {
+  .grid-layout {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media screen and (max-width: 480px) {
+  .grid-layout {
+    grid-template-columns: 1fr;
+  }
+}
+h1 {
+  font-size: 36px;
+}
+
+@media screen and (max-width: 768px) {
+  h1 {
+    font-size: 28px;
+  }
+}
+.illustration {
+  width: 100px;
+  height: 100px;
+  animation: rotate 4s infinite linear;
+}
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/*# sourceMappingURL=styles.production.css.map */
